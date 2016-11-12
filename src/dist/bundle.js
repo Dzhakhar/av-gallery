@@ -54,7 +54,7 @@
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -72,105 +72,105 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Gallery = function (_React$Component) {
-	  _inherits(Gallery, _React$Component);
+	    _inherits(Gallery, _React$Component);
 
-	  function Gallery(props) {
-	    _classCallCheck(this, Gallery);
+	    function Gallery(props) {
+	        _classCallCheck(this, Gallery);
 
-	    var _this = _possibleConstructorReturn(this, (Gallery.__proto__ || Object.getPrototypeOf(Gallery)).call(this, props));
+	        var _this = _possibleConstructorReturn(this, (Gallery.__proto__ || Object.getPrototypeOf(Gallery)).call(this, props));
 
-	    _this.state = {
-	      active: undefined
-	    };
+	        _this.state = {
+	            active: undefined
+	        };
 
-	    _this.renderImages = _this.renderImages.bind(_this);
-	    _this.componentWillMount = _this.componentWillMount.bind(_this);
-	    _this.prevImage = _this.prevImage.bind(_this);
-	    _this.nextImage = _this.nextImage.bind(_this);
-	    return _this;
-	  }
-
-	  _createClass(Gallery, [{
-	    key: "renderImages",
-	    value: function renderImages() {
-	      var self = this;
-	      var images = this.props.images;
-	      var active = this.state.active || 0;
-	      var callback = this.props.onRendered || false;
-
-	      if (images.length > 0) {
-	        return _react2.default.createElement(
-	          "div",
-	          { className: "item" },
-	          _react2.default.createElement("img", { src: images[active] })
-	        );
-	      }
-
-	      if (callback) {
-	        callback();
-	      }
+	        _this.renderImages = _this.renderImages.bind(_this);
+	        _this.componentWillMount = _this.componentWillMount.bind(_this);
+	        _this.prevImage = _this.prevImage.bind(_this);
+	        _this.nextImage = _this.nextImage.bind(_this);
+	        return _this;
 	    }
-	  }, {
-	    key: "nextImage",
-	    value: function nextImage() {
-	      var tmp = this.state.active;
-	      var callback = this.props.onSwitch || false;
 
-	      if (tmp + 1 < this.props.images.length) {
-	        tmp += 1;
-	      } else {
-	        tmp = 0;
-	      }
+	    _createClass(Gallery, [{
+	        key: "renderImages",
+	        value: function renderImages() {
+	            var self = this;
+	            var images = this.props.images;
+	            var active = this.state.active || 0;
+	            var callback = this.props.onRendered || false;
 
-	      this.setState({
-	        active: tmp
-	      }, function () {
-	        if (callback) {
-	          callback(tmp);
+	            if (images.length > 0) {
+	                return _react2.default.createElement(
+	                    "div",
+	                    { className: "item" },
+	                    _react2.default.createElement("img", { src: images[active] })
+	                );
+	            }
+
+	            if (callback) {
+	                callback();
+	            }
 	        }
-	      });
-	    }
-	  }, {
-	    key: "prevImage",
-	    value: function prevImage() {
-	      var tmp = this.state.active;
-	      var callback = this.props.onSwitch || false;
+	    }, {
+	        key: "nextImage",
+	        value: function nextImage() {
+	            var tmp = this.state.active;
+	            var callback = this.props.onSwitch || false;
 
-	      if (tmp - 1 > -1) {
-	        tmp -= 1;
-	      } else {
-	        tmp = this.props.images.length - 1;
-	      }
+	            if (tmp + 1 < this.props.images.length) {
+	                tmp += 1;
+	            } else {
+	                tmp = 0;
+	            }
 
-	      this.setState({
-	        active: tmp
-	      }, function () {
-	        if (callback) {
-	          callback(tmp);
+	            this.setState({
+	                active: tmp
+	            }, function () {
+	                if (callback) {
+	                    callback(tmp);
+	                }
+	            });
 	        }
-	      });
-	    }
-	  }, {
-	    key: "componentWillMount",
-	    value: function componentWillMount() {
-	      this.setState({
-	        active: parseInt(this.props.active) || 0
-	      });
-	    }
-	  }, {
-	    key: "render",
-	    value: function render() {
-	      return _react2.default.createElement(
-	        "div",
-	        { className: "av-gallery" },
-	        _react2.default.createElement("span", { className: "controls left", onClick: this.prevImage }),
-	        this.renderImages(),
-	        _react2.default.createElement("span", { className: "controls right", onClick: this.nextImage })
-	      );
-	    }
-	  }]);
+	    }, {
+	        key: "prevImage",
+	        value: function prevImage() {
+	            var tmp = this.state.active;
+	            var callback = this.props.onSwitch || false;
 
-	  return Gallery;
+	            if (tmp - 1 > -1) {
+	                tmp -= 1;
+	            } else {
+	                tmp = this.props.images.length - 1;
+	            }
+
+	            this.setState({
+	                active: tmp
+	            }, function () {
+	                if (callback) {
+	                    callback(tmp);
+	                }
+	            });
+	        }
+	    }, {
+	        key: "componentWillMount",
+	        value: function componentWillMount() {
+	            this.setState({
+	                active: parseInt(this.props.active) || 0
+	            });
+	        }
+	    }, {
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "av-gallery" },
+	                _react2.default.createElement("span", { className: "controls left", onClick: this.prevImage }),
+	                this.renderImages(),
+	                _react2.default.createElement("span", { className: "controls right", onClick: this.nextImage })
+	            );
+	        }
+	    }]);
+
+	    return Gallery;
 	}(_react2.default.Component);
 
 	exports.default = Gallery;

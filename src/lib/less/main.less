@@ -1,0 +1,36 @@
+.av-gallery {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .item {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .controls {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: block;
+
+    &.left {
+      left: 0;
+      right: 50%;
+    }
+
+    &.right {
+      right: 0;
+      left: 50%;
+    }
+  }
+}
